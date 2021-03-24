@@ -1,0 +1,37 @@
+﻿@model KeyValuePair<string, Dictionary<string, string>>
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+
+            <a class="navbar-dark" asp-area="" asp-controller="Home" asp-action="Index">practice-3</a>
+
+            <span>
+
+                @Model.Key
+
+            </span>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-1 text-right">
+
+                <ul class="navbar-nav ml-auto flex-nowrap">
+
+                    @foreach (var menuItem in @Model.Value)
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="@menuItem.Key">@menuItem.Value</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+

@@ -1,0 +1,23 @@
+﻿@model TechShop.DAL.Models.Category
+
+
+<form asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </td>
+
+        <td>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </td>
+
+        <td>
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </td>
+    </tr>
+</form>

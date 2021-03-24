@@ -1,0 +1,251 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 145px;
+  background: #00a2e1;
+}
+
+header>.container {
+  max-width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header>.container .text {
+  text-transform: uppercase;
+  background: #fcf103;
+  padding: 13px;
+}
+
+header>.container .text a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.container .logo {
+  width: 285px;
+  height: 82px;
+  position: relative;
+}
+
+header>.container .logo:before {
+  content: "";
+  position: absolute;
+  background-image: url(img/logo.png);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+main {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+main .wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+main .wrapper .img {
+  position: relative;
+  width: 18vw;
+  height: 48vh;
+  margin-right: 30px;
+}
+
+main .wrapper .img:before {
+  content: "";
+  position: absolute;
+  background-image: url(img/mobile.png);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+main .wrapper>div:nth-child(2) {
+  width: 18vw;
+  height: 48vh;
+  background: #9ad9ea;
+  border-radius: 15px;
+  margin-right: 30px;
+}
+
+main .wrapper>.container {
+  display: flex;
+  flex-direction: column;
+}
+
+main .wrapper>.container>.cards {
+  display: flex;
+  margin-bottom: 7px;
+}
+
+main .wrapper>.container>.cards>div {
+  width: 9vw;
+  height: 24vh;
+}
+
+main .wrapper>.container>.cards>div:first-child {
+  background: #00a3e8;
+  border-radius: 15px;
+  margin-right: 12px;
+}
+
+main .wrapper>.container>.cards>div:first-child ul {
+  list-style: none;
+  text-align: left;
+  padding-top: 25px;
+}
+
+main .wrapper>.container>.cards>div:first-child ul li {
+  padding-bottom: 7px;
+  color: #ffffff;
+}
+
+main .wrapper>.container>.cards>div:last-child {
+  background: #ff7f26;
+  border-radius: 15px;
+}
+
+main .wrapper>.container>.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18vw;
+  height: 22.5vh;
+  border: 4px solid #7a90aa;
+}
+
+main .wrapper>.container>.contact>div a {
+  background: #00a590;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 7px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+main .wrapper>.container>.contact>div a:active {
+  text-decoration: none;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.feedback .text {
+  margin-top: -85px;
+}
+
+.feedback .text h1 {
+  color: #333333;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.feedback .text p {
+  color: #436b89;
+}
+
+.feedback .comment {
+  display: flex;
+}
+
+.feedback .comment .label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.feedback .comment .label span {
+  margin-bottom: 30px;
+}
+
+.feedback .comment .inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback .comment .inputs * {
+  margin-bottom: 30px;
+}
+
+.feedback .comment .inputs select,
+input {
+  padding: 6px;
+  color: #444444;
+}
+
+.feedback .comment .inputs input,
+textarea {
+  background: #ebebeb;
+  border: none;
+}
+
+.feedback .comment .inputs input {
+  width: 210px;
+}
+
+.feedback .comment .inputs input:first-child {
+  width: 17px;
+}
+
+.feedback .comment .inputs select {
+  width: 250px;
+}
+
+.feedback .comment .inputs .button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feedback .comment .inputs .button button {
+  background: #00a690;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.feedback .comment .inputs .button button span {
+  font-weight: bold;
+  font-size: 11px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 48vh;
+  background: #00a2e7;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

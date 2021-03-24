@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Planner.Models.EventPlanning>
+@{
+    ViewData["Title"] = "FuturePlans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@for (int i = 0; i < 1; i++)
+{
+    try
+    {
+        <h1>Future Plans for:</h1>
+        <h4>@Model.ToList()[i].StartDateTime.ToString("dddd, dd MMMM yyyy")</h4>
+    }
+    catch
+    {
+        <h2>There are not plans for this day</h2>
+    }
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+                End
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name, new { value = "Name" })
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @item.StartDateTime.ToString("hh:mm tt")
+                </td>
+                <td>
+                    @item.EndDateTime.Value.ToString("hh:mm tt")
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@{
+    await Html.RenderPartialAsync("../Partials/_MenuPartial.cshtml", new KeyValuePair<string, Dictionary<string, string>>
+        ("Privacy",
+        new Dictionary<string, string>()
+            {
+                { "Login", "Log in"},
+                { "Index", "Register"}
+                                    }));
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <h1>@ViewData["Title"]</h1>
+
+        <p>Use this page to detail your site's privacy policy.</p>
+
+    </main>
+</div>

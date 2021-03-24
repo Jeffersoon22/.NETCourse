@@ -1,0 +1,53 @@
+﻿@model Millionare.Models.Question
+
+@{
+    ViewData["Title"] = "Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Game</h1>
+
+<h4>Question for $@Model.Cost</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Game">
+            <h2>@Model.QuestionContent</h2> <hr />
+                <div class="form-group">
+
+                    @try
+                    {
+                        if (@ViewBag.TipResponse != "FiftyFifty")
+                        {
+                            <h4><b> @ViewBag.TipResponse <br /></b></h4>
+                        }
+
+                    }
+                    catch
+                    {
+
+                    }
+
+                    @for (int i = 0; i < Model.Answers.Count(); i++)
+                    {
+                        <input type="radio" name="answer" value="@Model.Answers[i].AnswerContent" />
+                        <span>@Model.Answers[i].AnswerChar: @Model.Answers[i].AnswerContent</span><br />
+                    }
+
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+                <a class="btn btn-secondary" href="@Url.Action("Index","Home")">Back to the main page</a>
+            </div>
+        </form>
+    </div>
+
+    @foreach (var tip in ViewBag.tips)
+    {
+        <form class="text-center" method="post">
+            <div >
+                <button class="btn btn-secondary" style="background-color:teal; margin-left:4px" formaction="@tip">@tip</button>
+            </div>
+        </form>
+    }
+</div>

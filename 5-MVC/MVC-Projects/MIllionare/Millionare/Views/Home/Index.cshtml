@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+<hr />
+    <div class="text-center">
+            <a class="btn btn-secondary" style="background-color:cornflowerblue" href="@Url.Action("Game","Game")">Start a game</a>
+            <a class="btn btn-secondary" style="background-color:goldenrod" href="@Url.Action("Index","Question")">Management</a>
+            <a class="btn btn-secondary" style="background-color:goldenrod" href="@Url.Action("History","Game")">Game History</a>
+    </div>

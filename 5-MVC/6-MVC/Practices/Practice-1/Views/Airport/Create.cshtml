@@ -1,0 +1,45 @@
+﻿@model Practice_1.Model.Airport
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create airport</title>
+</head>
+<body>
+    <h1>Create new airport:</h1>
+
+    <form action="@Url.Action("CreateNewAirport")" method="post">
+        <div>
+            <input type="text" name="name" placeholder="Input airport name" value="" />
+        </div>
+
+        <div>
+            <input type="password" placeholder="Input password" name="city" value="" />
+        </div>
+        <div>
+            <select name="airline">
+                @foreach (var airline in ViewBag.airlines)
+                {
+                    <option value="@airline.AirlineName">@airline.AirlineName</option>
+                }
+            </select>
+        </div>
+
+        <div>
+
+            <input type="checkbox" name="IsInternational" value="True" />
+            <span>International</span>
+        </div>
+
+
+
+        <div>
+            <input type="button" class="btn btn-primary" onclick="history.back()" value="Back" />
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </form>
+    
+</body>
+</html>

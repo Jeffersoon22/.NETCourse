@@ -1,0 +1,102 @@
+request:
+POST http://dummy.restapiexample.com/api/v1/create
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: e5cdb930-8c71-47ff-891d-8bcef41823bd
+{"name":"Natali","salary":"15684","age":"20"}
+
+{
+    "status": "success",
+    "data": {
+        "name": "Natali",
+        "salary": "15684",
+        "age": "20",
+        "id": 48
+    }
+}
+
+request:
+POST http://dummy.restapiexample.com/api/v1/create
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: b408c2f7-1b93-4973-afd4-ad33de1a9d8d
+http://dummy.restapiexample.com/api/v1/create
+
+{"name":"Edward","salary":"999","age":"29"}
+{
+    "status": "success",
+    "data": {
+        "name": "Edward",
+        "salary": "999",
+        "age": "49",
+        "id": 62
+    }
+}
+
+
+request:
+POST http://dummy.restapiexample.com/api/v1/create
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: d5595ec6-ff96-451d-8666-7a4d0fb5a5e1
+{"name":"Lauren","salary":"10000","age":"30"}
+
+{
+    "status": "success",
+    "data": {
+        "name": "Alyosha",
+        "salary": "999",
+        "age": "30",
+        "id": 63
+    }
+}
+
+request:
+GET http://dummy.restapiexample.com/api/v1/employee/48
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: f40c0676-ed93-46ba-8761-b4f8ee1d9718
+
+{
+    "status": "success",
+    "data": {
+        "employee_name": "Natali",
+        "employee_salary": "15684",
+        "employee_age": "20",
+        "id": 48
+    }
+}
+
+
+request:
+GET http://dummy.restapiexample.com/api/v1/employee/62
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: c1dadea0-3af7-4459-b478-089f01e57727
+{
+    "status": "success",
+    "data": {
+        "employee_name": "Edward",
+        "employee_salary": "999",
+        "employee_age": "49",
+        "id": 62
+    }
+}
+
+
+request:
+GET http://dummy.restapiexample.com/api/v1/employee/63
+Host: dummy.restapiexample.com
+Cache-Control: no-cache
+Postman-Token: 5b068087-deec-421e-b22a-d4d1ffbfa80e
+{
+    "status": "success",
+    "data": {
+        "employee_name": "Alyosha",
+        "employee_salary": "999",
+        "employee_age": "30",
+        "id": 63
+    }
+}
+
+

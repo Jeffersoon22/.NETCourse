@@ -1,0 +1,4 @@
+Name: Sergii, Phone: 123456789, Position name: Freelancer, Salary: 1000000 
+Name: Max, Phone: 31134, Position name: Freelancer, Salary: 1000000 
+Name: Andrii, Phone: 734534534, Position name: Freelancer, Salary: 1000000 
+Name: director, Phone: 7777, Position name: Director, Salary: 2000 

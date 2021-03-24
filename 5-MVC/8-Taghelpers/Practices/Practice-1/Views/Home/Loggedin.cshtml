@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Loggedin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@{
+    await Html.RenderPartialAsync("../Partials/_MenuPartial.cshtml", new KeyValuePair<string, Dictionary<string, string>>
+        ("Success",
+        new Dictionary<string, string>()
+            {
+                { "Index", "Log out"},
+                            }));
+}
+
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+
+
+        <h1>You are Loggedin</h1>
+    </main>
+</div>
+
