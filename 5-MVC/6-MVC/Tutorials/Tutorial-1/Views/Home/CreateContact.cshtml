@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateContact</title>
+</head>
+<body>
+
+    <h1>Create a contact</h1>
+
+    <form action="@Url.Action("Create")" method="post">
+
+        <div>
+            <span>Name: </span>
+            <input type="text" name="name" value="" />
+        </div>
+
+        <div>
+            <span>Phone: </span>
+            <input type="text" name="phone" value="" />
+        </div>
+
+        <div>
+            <span>Position: </span>
+            <select name="position">
+                @foreach (var position in ViewBag.positions)
+                {
+                    <option value="@position.Name">@position.Name $@position.Salary</option>
+                }
+            </select>
+        </div>
+
+        <input type="submit" value="Create"/>
+    </form>
+</body>
+</html>

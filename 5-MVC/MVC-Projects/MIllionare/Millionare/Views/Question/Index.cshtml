@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Millionare.Models.Question>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Question</h1>
+
+<table class="table">
+ 
+    <tr>
+        <th>
+            N
+        </th>
+        <th>
+            Questions
+        </th>
+        <th>
+            Answers
+        </th>
+        <th>
+            Options
+        </th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionContent)
+                </td>
+                <td>
+                    @foreach (var answer in item.Answers)
+                    {
+                    <span>@answer.AnswerChar: @answer.AnswerContent</span><br />
+                        
+
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+<div>
+    <a class="btn btn-primary" href="~/Home/Index">Back to the main page</a>
+</div>

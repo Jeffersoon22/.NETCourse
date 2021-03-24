@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Millionare.Models.History>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartGameTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionsAnswered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoneyWon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartGameTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionsAnswered)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoneyWon)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-primary" href="~/Home/Index">Back to the main page</a>
+</div>

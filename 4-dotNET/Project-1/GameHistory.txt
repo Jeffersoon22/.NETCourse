@@ -1,0 +1,30 @@
+Start of game: 1/22/2020 1:27:35 AM
+Total amount of questions:6
+Right answers: 6
+Wrong answers: 0
+Money won: 1000000
+
+Start of game: 1/22/2020 1:30:38 AM
+Total amount of questions:4
+Right answers: 3
+Wrong answers: 1
+Money won: 0
+
+Start of game: 1/22/2020 1:31:10 AM
+Total amount of questions:5
+Right answers: 4
+Wrong answers: 0
+Money won: 120000
+
+Start of game: 1/22/2020 3:01:20 PM
+Total amount of questions:4
+Right answers: 3
+Wrong answers: 1
+Money won: 0
+
+Start of game: 1/22/2020 3:02:58 PM
+Total amount of questions:4
+Right answers: 3
+Wrong answers: 0
+Money won: 70000
+

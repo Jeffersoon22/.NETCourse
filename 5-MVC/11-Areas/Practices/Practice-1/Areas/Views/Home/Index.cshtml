@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@model AccountInfo
+
+
+@{
+    await Html.RenderPartialAsync("../Partials/_MenuPartial.cshtml", new KeyValuePair<string, Dictionary<string, string>>
+        ("Home",
+        new Dictionary<string, string>()
+            {
+                { "Login", "Log in"},
+                { "Index", "Register"}
+                            }));
+}
+
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <h1>Registration Info</h1>
+        <hr />
+        <div class="row">
+
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label">Username</label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CodeQuestion" class="control-label">Question</label>
+                        <select asp-for="CodeQuestion" class="form-control">
+                            @foreach (string question in ViewBag.questions)
+                            {
+                                <option value="@question">@question</option>
+                            }
+                        </select>
+                        <span asp-validation-for="CodeQuestion" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CodeAnswear" class="control-label">Code Answer</label>
+                        <input asp-for="CodeAnswear" class="form-control" />
+                        <span asp-validation-for="CodeAnswear" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-success" />
+                        <a href="@Url.Action("Login","Home")"><input type="button" value="Login" class="btn btn-secondary" style="background-color: mediumpurple;" /></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+@section Scripts
+{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

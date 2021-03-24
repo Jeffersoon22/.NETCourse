@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Practice_1.Models.Student>
+@{
+    ViewData["Title"] = "Student";
+}
+
+<h1>Created</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(student => student.FirstName)</th>
+            <th>@Html.DisplayNameFor(student => student.LastName)</th>
+            <th>@Html.DisplayNameFor(student => student.Email)</th>
+            <th>@Html.DisplayNameFor(student => student.BirthDate)</th>
+            <th>@Html.DisplayNameFor(student => student.Course)</th>
+            <th>@Html.DisplayNameFor(student => student.Password)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(studentItem => item.FirstName) </td>
+                <td>@Html.DisplayFor(studentItem => item.LastName)</td>
+                <td>@Html.DisplayFor(studentItem => item.Email)</td>
+                <td>@Html.DisplayFor(studentItem => item.BirthDate)</td>
+                <td>@Html.DisplayFor(studentItem => item.Course)</td>
+                <td>@Html.DisplayFor(studentItem => item.Password)</td>
+            </tr>
+        }
+    </tbody>
+</table>

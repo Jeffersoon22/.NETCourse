@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GymManagementSystem.DAL.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Payments</h1>
+
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+                Member Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                Date
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.Name)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Amount)
+            </td>
+           <td>
+               @Html.DisplayFor(modelItem => item.Date)
+           </td>
+            <td>
+                <div>
+                    <a style="margin-left:8px;" class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a style="margin-left:8px;" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a style="margin-left:8px;" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+</p>

@@ -1,0 +1,15 @@
+﻿@model int
+@{
+    ViewData["Title"] = "Win";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Winner</h1>
+<hr />
+<br />
+<h3 class="text-center">You won $@Model</h3>
+
+
+<div>
+    <a asp-action="Game">Start a new game</a>
+</div>

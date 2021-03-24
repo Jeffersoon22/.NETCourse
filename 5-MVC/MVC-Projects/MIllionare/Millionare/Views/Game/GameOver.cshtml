@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "GameOver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Game Over</h1> <hr />
+<div class="text-center">
+    <a class="btn btn-secondary" style="background-color: forestgreen" href="@Url.Action("Game","Game")">Start again</a>
+    <a class="btn btn-secondary" style="background-color: blueviolet" href="@Url.Action("Index","Home")">Back to the main page</a>
+</div>

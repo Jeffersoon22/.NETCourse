@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Practice_1.Model.Airport>
+
+<title>Airports</title> 
+<style> table
+
+        {
+            font-family: arial, sans-serif;
+            width: 100%;
+        }
+
+        td, th {
+            border-bottom: 1px solid #808080;
+            text-align: left;
+            padding: 8px;
+        }
+    button {
+        background-color: black;
+        color: white;
+    }
+    </style>
+
+<table id="airports">
+    <tr>
+        <th>N</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Is international</th>
+        <th>Airline</th>
+    </tr>
+    @{ 
+        int counter = 1;
+        @foreach (var airport in Model)
+        {
+
+                <tr>
+                    <td>@counter</td>
+                    <td>@airport.Name</td>
+                    <td>@airport.City</td>
+                    <td>@airport.IsInternational</td>
+                    <td>@airport.Airlines[0].AirlineName</td>
+
+                </tr>
+            counter++;
+        }
+     }
+
+</table>
+
+<a href="~/Airport/Create"><button class="btn btn-primary">Create</button></a>
+<a href="~/Home/Index"><button class="btn btn-primary">Back</button>  </a>

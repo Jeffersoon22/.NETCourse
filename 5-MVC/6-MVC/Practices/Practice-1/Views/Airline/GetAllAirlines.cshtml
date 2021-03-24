@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Practice_1.Model.Airline>
+<style>
+    button {
+        background-color: black;
+        color: white;
+    }
+</style>
+<title>Airlines</title>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        width: 100%;
+    }
+
+    td, th {
+        border-bottom: 1px solid #808080;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>Airline Name</th>
+        <th>Aircraft</th>
+        <th>Is Lowcost</th>
+        <th>Maximum Luggage Weight</th>
+    </tr>
+
+    @{
+        int counter = 1;
+        @foreach (var airline in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@airline.AirlineName</td>
+                <td>@airline.AircraftCount</td>
+                <td>@airline.IsLowcost</td>
+                <td>@airline.MaximumLuggageWeight</td>
+            </tr>
+            counter++;
+        }
+        
+    }
+    </table>
+
+<a href="~/Airline/Create"><button>Create</button></a>
+<a href="~/Home/Index"><button>Back</button>  </a>

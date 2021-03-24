@@ -1,0 +1,58 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Student Page";
+}
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+
+
+
+<form action="@Url.Action("Index")" method="post">
+    <div class="form-group">
+        <div>
+        @Html.LabelFor(student => student.FirstName)
+        @Html.TextBoxFor(name => name.FirstName, new { @class = "form-control"})
+        @Html.ValidationMessageFor(student => student.FirstName)
+
+  
+        @Html.LabelFor(student => student.LastName)
+        @Html.TextBoxFor(last => last.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(student => student.LastName)
+
+
+        @Html.LabelFor(student => student.BirthDate)
+        @Html.TextBoxFor(date => date.BirthDate, new { @class = "form-control"})
+        @Html.ValidationMessageFor(student => student.BirthDate)
+
+
+        @Html.LabelFor(student => student.Email)
+        @Html.TextBoxFor(mail => mail.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(student => student.Email)
+
+
+        @Html.LabelFor(student => student.Course)
+        @Html.TextBoxFor(coures => coures.Course, new { @class = "form-control" })
+        @Html.ValidationMessageFor(student => student.Course)
+
+   
+        @Html.LabelFor(student => student.Password, new { @type = "password" })
+        @Html.TextBoxFor(password => password.Password, new { @class = "form-control", @type = "password" })
+        @Html.ValidationMessageFor(student => student.Password)
+        </div>
+        <hr />
+        <div>
+            <input type="checkbox" name="agree" value="True"/> Agree terms and polices
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+</form>
+
+
+

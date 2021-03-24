@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Planner.Models.EventPlanning>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Plans</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+                End
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name, new { value = "Name" })
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDateTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<div>
+    <a asp-action="Create" class="btn btn-secondary" style="background-color:darkgreen">Create New</a>
+
+
+    <form asp-action="FuturePlans">
+        <span>Search events with day</span> <br />
+        <input type="date" name="date" value="" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

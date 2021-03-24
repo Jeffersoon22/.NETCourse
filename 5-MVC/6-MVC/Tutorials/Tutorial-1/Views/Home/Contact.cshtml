@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Tutorial_1.Model.Contact>
+<h1>Contact view</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Phone</td>
+        <td>Position name</td>
+        <td>Salary</td>
+    </tr>
+    @foreach (var contact in Model)
+    {
+        <tr>
+            <td>@contact.Name</td>
+            <td>@contact.Phone</td>
+            <td>@contact.Position.Name</td>
+            <td>@contact.Position.Salary</td>
+        </tr>
+    }
+</table>
